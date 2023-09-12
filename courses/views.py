@@ -9,7 +9,7 @@ from .serializers import CourseSerializer, WeekSerializer
 
 
 class CourseAPIView(APIView):
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
 
     def get(self, request, course_id=None):
         if course_id is not None:
@@ -30,6 +30,15 @@ class CourseAPIView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+# to delete all the courses
+    def delete(self, request):
+        courses = Course.objects.all()
+        courses.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
 
     def put(self, request, course_id):
         try:

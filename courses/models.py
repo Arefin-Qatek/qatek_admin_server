@@ -13,6 +13,9 @@ class Course(models.Model):
     student_support_session = models.CharField(max_length=100)
     support_session_duration = models.CharField(max_length=20)
 
+    classes = models.CharField(max_length=100, default='')
+    review_class = models.CharField(max_length=100)
+
     def __str__(self):
         return self.course_name
 
