@@ -9,7 +9,7 @@ from .serializers import CourseSerializer, WeekSerializer
 
 
 class CourseAPIView(APIView):
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
 
     def get(self, request, course_id=None):
         if course_id is not None:
