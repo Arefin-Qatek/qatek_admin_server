@@ -116,6 +116,13 @@ DATABASES = {
 }
 
 
+# # Define the MEDIA_ROOT for the app-specific image folder
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'homepage', 'images')
+
+# # Define the MEDIA_URL to include the base URL for serving media files
+# MEDIA_URL = '/media/'
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

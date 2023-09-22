@@ -32,7 +32,6 @@ class ImageView(APIView):
         image.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-
 #For Public View
 class ImageListView(APIView):
     def get(self, request):
